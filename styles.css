@@ -1,0 +1,330 @@
+/* ======================== */
+/* ==== RESET & GENERAL ==== */
+/* ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f0f0f;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* ================== */
+/* ==== NAVEGACIÓN ==== */
+/* ================== */
+header {
+    background-color: #1a1a1a;
+    padding: 5rem 0;
+    text-align: center;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* ================== */
+/* ==== ENCABEZADO ==== */
+/* ================== */
+header h1 {
+    font-size: 2.8rem;
+    color: #00bfff;
+    letter-spacing: 2px;
+}
+
+.subtitulos p { /* Cambio de "header p" a ".subtitulos p" */
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+}
+
+/* ======================== */
+/* ==== SECCIONES COMÚN ==== */
+/* ======================== */
+section {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00bfff;
+    border-left: 5px solid #00bfff;
+    padding-left: 0.8rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* =================== */
+/* ==== PORTAFOLIO ==== */
+/* =================== */
+.proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.proyecto {
+    background-color: #1f1f1f;
+    border: 1px solid #2f2f2f;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.proyecto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+}
+
+.proyecto img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.proyecto h3 {
+    margin: 1rem 0 0.5rem;
+    color: #e0e0e0;
+}
+
+.proyecto p {
+    padding: 0 1rem;
+    font-size: 0.95rem;
+    color: #bbb;
+}
+
+.botones-proyecto a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    text-decoration: none; /* Asegura que no tenga subrayado */
+}
+
+.btn-ver {
+    background: transparent;
+    color: white;
+    border: 2px solid #00bfff;
+}
+
+.btn-ver:hover {
+    background-color: #00bfff;
+    
+}
+
+.btn-descargar {
+    background: transparent;
+    color: white;
+    border: 2px solid #00abfb;
+}
+
+.btn-descargar:hover {
+    background-color: #00bfff;
+    border-color: #00bfff; /* Se agrega para mantener consistencia */
+}
+
+/* ================== */
+/* ==== SERVICIOS ==== */
+/* ================== */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.servicio {
+    background-color: #1f1f1f; /* Se ajusta el color para que sea consistente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+}
+
+.servicio ul { /* Se agrega un selector para las listas de servicios */
+    list-style-type: square;
+    padding-left: 1.5rem;
+    color: #ccc;
+    margin-top: 1rem;
+}
+
+.servicio li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* ======================== */
+/* ==== SOBRE MÍ & LISTAS ==== */
+/* ======================== */
+#sobre-mi {
+    text-align: center;
+}
+
+#sobre-mi img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.2rem;
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+}
+
+/* Nota: Los estilos genéricos para 'ul' y 'li' ya están definidos y aplicarán a estas secciones */
+/* Si necesitas estilos específicos, puedes usar #sobre-mi ul o #sobre-mi li */
+
+/* =================== */
+/* ==== HABILIDADES ==== */
+/* =================== */
+.container {
+    padding: 0 15px; /* Para que funcione con Bootstrap, se asegura el padding */
+}
+
+.row {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.col-sm-4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.progress {
+    height: 1rem;
+    background-color: #2f2f2f;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #00bfff;
+    color: #0f0f0f;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= */
+/* ==== FOOTER ==== */
+/* ================= */
+footer {
+    background-color: #1a1a1a;
+    color: #aaa;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 5rem;
+    border-top: 1px solid #2a2a2a;
+}
+
+footer .redes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Para que se ajusten en móviles */
+}
+
+.redes a {
+    display: inline-flex;
+    align-items: center;
+    color: #00bfff;
+    text-decoration: none;
+    font-size: 1rem;
+    gap: 0.4rem;
+    transition: color 0.3s;
+}
+
+.redes a:hover {
+    color: #fff;
+}
+
+.redes svg {
+    vertical-align: middle;
+}
+
+/* ================== */
+/* ==== RESPONSIVE ==== */
+/* ================== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .proyecto img {
+        height: 160px;
+    }
+    
+    .servicios-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+}
+#boton-subir {
+  position: fixed; /* Mantiene el botón fijo en la pantalla */
+  bottom: 25px;    /* 25px de distancia desde el borde inferior */
+  right: 25px;     /* 25px de distancia desde el borde derecho */
+  background-color: #00bfff; /* Fondo del mismo color que tu tema */
+  color: #fff;               /* Color blanco para el ícono */
+  width: 45px;               /* Ancho del botón */
+  height: 45px;              /* Alto del botón */
+  display: flex;             /* Usa flexbox para centrar el ícono */
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;        /* Hace el botón perfectamente redondo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Una sombra sutil */
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s; /* Transición suave */
+  opacity: 0;                /* El botón estará oculto por defecto */
+  visibility: hidden;        /* Oculta el botón por defecto */
+  z-index: 1000;             /* Asegura que el botón esté sobre otros elementos */
+}
+
+#boton-subir:hover {
+  transform: scale(1.1); /* Agranda el botón ligeramente al pasar el mouse */
+}
+
+/* Estilos para el ícono SVG dentro del botón */
+#boton-subir svg {
+  width: 24px;
+  height: 24px;
+}
+
