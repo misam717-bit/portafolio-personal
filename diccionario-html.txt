@@ -1,0 +1,77 @@
+# 📘 Diccionario de HTML — Guía Práctica
+
+## 🏗️ Estructura básica
+<!DOCTYPE html> → Indica que es un documento HTML5.
+<html lang="es"> → Raíz del documento. lang indica el idioma.
+<head> → Contiene metadatos (no se muestran en la página).
+<title> → Título en la pestaña del navegador.
+<meta charset="UTF-8"> → Define la codificación de caracteres (UTF-8).
+<link> → Enlaza archivos externos (CSS, íconos, etc.).
+<script> → Inserta o enlaza código JavaScript.
+<body> → Contenido visible de la página.
+
+## 📑 Texto y contenido
+<h1>–<h6> → Títulos jerárquicos (H1 más grande).
+<p> → Párrafo de texto.
+<br> → Salto de línea.
+<hr> → Línea horizontal divisoria.
+<strong> → Texto importante (negrita semántica).
+<b> → Negrita (sin importancia semántica).
+<em> → Texto enfatizado (cursiva semántica).
+<i> → Cursiva decorativa.
+<u> → Subrayado.
+<span> → Contenedor en línea, útil para estilos.
+<div> → Contenedor en bloque (separa secciones).
+
+## 🔗 Enlaces e imágenes
+<a> → Crea enlaces. href define la URL.
+<img> → Inserta una imagen.
+<figure> → Agrupa imagen + descripción.
+
+## 📦 Listas
+<ul> → Lista desordenada (con viñetas).
+<ol> → Lista ordenada (números).
+<li> → Elemento de lista.
+<dl> → Lista de definiciones.
+
+## 📝 Formularios
+<form> → Contenedor de formulario.
+<input> → Campo de entrada. Tipos: text, password, email, number, file, checkbox, radio, submit.
+<textarea> → Campo de texto largo.
+<select> → Lista desplegable.
+<label> → Etiqueta descriptiva para inputs.
+<button> → Botón.
+
+## 📊 Tablas
+<table> → Crea una tabla.
+<tr> → Fila de la tabla.
+<td> → Celda de datos.
+<th> → Celda de encabezado (negrita).
+<thead> → Agrupa cabecera.
+<tbody> → Agrupa cuerpo.
+<tfoot> → Agrupa pie de tabla.
+
+## 🎥 Multimedia
+<audio> → Inserta audio.
+<video> → Inserta video.
+<source> → Fuente dentro de audio/video.
+<iframe> → Inserta contenido externo (ej. YouTube).
+
+## 🧩 Semánticas (HTML5)
+<header> → Encabezado de página o sección.
+<nav> → Contenedor de navegación.
+<main> → Contenido principal.
+<section> → Agrupa un bloque temático.
+<article> → Contenido independiente (ej. post, noticia).
+<aside> → Contenido lateral.
+<footer> → Pie de página.
+
+## 🖍️ Extras y atributos útiles
+id="nombre" → Identificador único para un elemento.
+class="clase" → Agrupa elementos para CSS/JS.
+style="color:red;" → Estilo en línea.
+target="_blank" → Abrir enlace en nueva pestaña.
+alt="texto" → Texto alternativo en imágenes.
+title="tooltip" → Texto flotante al pasar el mouse.
+download → Enlaces que descargan archivos.
+hidden → Oculta un elemento.

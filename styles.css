@@ -14,49 +14,86 @@ body {
     line-height: 1.6;
 }
 
-/* ================== */
-/* ==== NAVEGACIÓN ==== */
-/* ================== */
+/* ======================== */
+/* ==== ENCABEZADO Y NAV ==== */
+/* ======================== */
 header {
     background-color: #1a1a1a;
-    padding: 5rem 0;
+    padding: 4rem 0 3rem; /* Ajuste del padding para centrar mejor el contenido */
     text-align: center;
-    border-bottom: 1px solid #2f2f2f;
+    border-bottom: 2px solid #00bfff; /* Borde más grueso y visible */
 }
 
+/* TÍTULO PRINCIPAL */
+header h1 {
+    font-size: 3.5rem; /* Más grande para impacto */
+    color: #ffffff; /* Blanco puro para destacar */
+    letter-spacing: 4px;
+    margin-top: 1.5rem; /* Espacio debajo de la nav */
+    text-transform: uppercase;
+    /* Efecto sutil de sombra/resplandor */
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+/* SUBTÍTULOS Y CARRERAS */
+.subtitulos {
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+    padding: 0 2rem;
+}
+
+.subtitulos p { 
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+    position: relative;
+    padding-left: 15px; /* Espacio para el guion/ícono */
+    text-align: left; /* Alineación a la izquierda para el estilo de lista */
+    border-left: 2px solid #444; /* Línea tenue a la izquierda para simular línea de tiempo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ícono / Guion para la lista de carreras */
+.subtitulos p::before {
+    content: '→'; /* Símbolo de flecha o guion */
+    color: #00bfff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* NAVEGACIÓN */
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 2.5rem;
+    gap: 1.5rem; /* Menos espacio horizontal en la nav */
     list-style: none;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    padding: 0.5rem 0;
+    background-color: #242424; /* Fondo sutil para la nav */
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 nav a {
     color: #00bfff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600; /* Ligeramente más grueso */
     letter-spacing: 1px;
-    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
 }
 
 nav a:hover {
-    color: #ffffff;
-}
-
-/* ================== */
-/* ==== ENCABEZADO ==== */
-/* ================== */
-header h1 {
-    font-size: 2.8rem;
-    color: #00bfff;
-    letter-spacing: 2px;
-}
-
-.subtitulos p { /* Cambio de "header p" a ".subtitulos p" */
-    font-size: 1.2rem;
-    color: #aaa;
-    margin-top: 0.5rem;
+    color: #1a1a1a; /* Texto oscuro */
+    background-color: #00bfff; /* Fondo azul brillante */
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
 }
 
 /* ======================== */
@@ -210,6 +247,101 @@ h2 {
 /* =================== */
 /* ==== HABILIDADES ==== */
 /* =================== */
+#habilidades {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+#habilidades h2 {
+    color: #00bfff;
+    margin-bottom: 0.5rem;
+}
+
+#habilidades hr {
+    max-width: 100px;
+    margin: 0.5rem auto 3rem;
+    border-color: #ffc107;
+    border-width: 3px;
+    opacity: 1; /* Asegura que la línea se vea en Bootstrap 5 */
+}
+
+/* Estilo principal para cada tarjeta de habilidad */
+.habilidad-card {
+    /* Fondo ligeramente más claro que el cuerpo para destacar */
+    background-color: #1a1a1a; 
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    /* Sombra elegante */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+    transition: all 0.3s ease-in-out;
+    /* Centra el texto y los elementos dentro de la tarjeta */
+    text-align: center; 
+    /* El nombre de la habilidad es un texto normal, por eso lo centramos. */
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+/* Efecto al pasar el ratón */
+.habilidad-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 191, 255, 0.2);
+}
+
+/* Estilos para los íconos SVG */
+.habilidad-card svg {
+    margin-bottom: 10px;
+    width: 64px;
+    height: 64px;
+    /* Pequeña animación para el ícono */
+    transition: transform 0.3s; 
+}
+
+.habilidad-card:hover svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+
+/* Estilos para la barra de progreso */
+.progress {
+    height: 25px;
+    margin-top: 10px;
+    background-color: #333; /* Fondo oscuro de la barra */
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* * ======================================== 
+ * ==== MODIFICACIONES PARA EL PROMPT: ====
+ * ========================================
+ */
+
+/* 1. Estilos para el relleno de la barra de progreso: Color de fondo AMARILLO (ffc107) y texto NEGRO (000) */
+.progress-bar {
+    font-weight: 700;
+    color: #000; /* Texto negro */
+    background-color: #ffc107; /* Color de tu tema, ahora forzado a amarillo */
+    transition: width 0.6s ease;
+}
+
+/* 2. Sobrescribe cualquier color de clase de Bootstrap para asegurar que sea amarillo y el texto negro. */
+/* Se mantiene el !important para asegurar que sobrescriba las clases de Bootstrap. */
+.progress-bar.bg-info { background-color: #ffc107 !important; color: #000; } 
+.progress-bar.bg-warning { background-color: #ffc107 !important; color: #000; } /* Ya era amarillo */
+.progress-bar.bg-success { background-color: #ffc107 !important; color: #000; } 
+
+/* * ======================================== 
+ * ==== FIN DE MODIFICACIONES ====
+ * ========================================
+ */
+
+/* Estilos de Media Query para móviles */
+@media (max-width: 576px) {
+    .habilidad-card {
+        padding: 15px;
+    }
+}
 .container {
     padding: 0 15px; /* Para que funcione con Bootstrap, se asegura el padding */
 }
@@ -236,8 +368,10 @@ h2 {
 }
 
 .progress-bar {
-    background-color: #00bfff;
-    color: #0f0f0f;
+    /* NOTA: Ya redefinido arriba para que sea amarillo/negro en todos los casos. 
+     * Se repite esta definición para mayor claridad/seguridad */
+    background-color: #ffc107; 
+    color: #000; 
     font-size: 0.7rem;
     display: flex;
     align-items: center;
@@ -298,33 +432,171 @@ footer .redes {
     .servicios-grid {
         grid-template-columns: 1fr; /* Una columna en móvil */
     }
-}
-#boton-subir {
-  position: fixed; /* Mantiene el botón fijo en la pantalla */
-  bottom: 25px;    /* 25px de distancia desde el borde inferior */
-  right: 25px;     /* 25px de distancia desde el borde derecho */
-  background-color: #00bfff; /* Fondo del mismo color que tu tema */
-  color: #fff;               /* Color blanco para el ícono */
-  width: 45px;               /* Ancho del botón */
-  height: 45px;              /* Alto del botón */
-  display: flex;             /* Usa flexbox para centrar el ícono */
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;        /* Hace el botón perfectamente redondo */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Una sombra sutil */
-  transition: opacity 0.3s, visibility 0.3s, transform 0.3s; /* Transición suave */
-  opacity: 0;                /* El botón estará oculto por defecto */
-  visibility: hidden;        /* Oculta el botón por defecto */
-  z-index: 1000;             /* Asegura que el botón esté sobre otros elementos */
+    
+    /* Ajuste para móviles para que la navegación se vea mejor */
+    nav ul {
+        flex-direction: row; /* Mantener horizontal si hay espacio */
+        flex-wrap: wrap; /* Permitir que se envuelvan */
+        gap: 0.75rem;
+    }
 }
 
-#boton-subir:hover {
-  transform: scale(1.1); /* Agranda el botón ligeramente al pasar el mouse */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+/* ======================== */
+/* ==== ESTILOS MODAL Y CARRUSEL ==== */
+/* ======================== */
+
+/* Estilo para mejorar la legibilidad del texto en el carrusel (Bootstrap Modal) */
+.carousel-caption {
+    /* Fondo oscuro semitransparente para mejorar el contraste con la imagen */
+    background-color: rgba(0, 0, 0, 0.6); 
+    /* Borde redondeado para que se vea más pulido */
+    border-radius: 5px; 
+    /* Padding para que el texto no se pegue a los bordes */
+    padding: 10px;
+    /* Asegura que el texto sea claro en el tema oscuro */
+    color: #ffffff; 
+    /* Ajusta la posición para que no se pegue demasiado al borde inferior del modal */
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    margin-bottom: 20px;
 }
 
-/* Estilos para el ícono SVG dentro del botón */
-#boton-subir svg {
-  width: 24px;
-  height: 24px;
+/* Estilo para el título dentro de la descripción del carrusel */
+.carousel-caption h5 {
+    color: #00bfff  ; /* Color de tu tema para el título */
+    margin-bottom: 5px;
 }
 
+/* Ajuste para las imágenes del carrusel para que se vean bien dentro del modal */
+.modal-body .carousel-item img {
+    height: auto;
+    max-height: 500px; /* Limita la altura de las capturas en pantallas grandes si es necesario */
+    object-fit: contain; /* Asegura que la imagen completa sea visible */
+    width: 100%;
+}
+/* ======================== */
+/* ==== BOTÓN IR ARRIBA ==== */
+/* ======================== */
+
+.btn-scroll-top {
+    /* Posicionamiento fijo para que sea flotante */
+    position: fixed;
+    bottom: 25px; /* Separación del borde inferior */
+    right: 25px; /* Separación del borde derecho */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    
+    /* Estilo del botón */
+    background-color: #00bfff; /* Color principal de tu tema */
+    color: #ffffff;
+    border: none;
+    border-radius: 50%; /* Forma circular */
+    width: 50px; /* Tamaño del botón */
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4); /* Sombra con resplandor azul */
+    
+    /* Transiciones suaves para la visibilidad y el hover */
+    opacity: 0; /* Inicialmente oculto (lo controlará JavaScript) */
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background-color 0.3s;
+    
+    /* Flexbox para centrar el ícono */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estado visible */
+.btn-scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Efecto al pasar el ratón */
+.btn-scroll-top:hover {
+    background-color: #008cba; /* Un azul más oscuro al pasar el ratón */
+    transform: translateY(-5px) scale(1.1); /* Ligero movimiento hacia arriba y un poco más grande */
+}
+
+/* Estilo para el ícono SVG dentro del botón */
+.btn-scroll-top svg {
+    /* Asegura que el ícono sea blanco */
+    stroke: #ffffff; 
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    .btn-scroll-top {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+}
+/* ======================== */
+/* ==== PANTALLA DE CARGA (LOADER) - AJUSTES DE CENTRADO ==== */
+/* ======================== */
+#loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f0f; 
+    z-index: 9999;
+    /* >>> AÑADIR/AJUSTAR ESTAS PROPIEDADES PARA CENTRAR EL CONTENIDO <<< */
+    display: flex; 
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    /* >>> FIN AJUSTES DE CENTRADO <<< */
+    transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out; 
+}
+/* ... el resto de estilos de #loader-container.hidden se mantienen ... */
+
+
+.loader-content {
+    text-align: left;
+    color: #ffffff;
+    font-family: 'Consolas', 'Courier New', monospace;
+    max-width: 600px;
+    width: 90%;
+    /* BOX-SHADOW AÑADIDO PARA UN LOOK MÁS TERMINAL CON UN MARCO */
+    box-shadow: 0 0 0 2px rgba(0, 191, 255, 0.2); 
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente oscuro */
+}
+/* Estilos de la Barra de Carga */
+.loading-bar-container {
+    height: 4px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.loading-bar {
+    height: 100%;
+    width: 150%; /* Más ancho para que el gradiente se mueva mejor */
+    background: linear-gradient(90deg, transparent 0%, #00bfff 50%, transparent 100%);
+    /* Duración ajustada a 3s */
+    animation: load-progress 3s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+    transform-origin: 0% 50%;
+}
+
+/* Animación de la barra de progreso */
+@keyframes load-progress {
+    0% {
+        /* Inicia fuera de la vista a la izquierda */
+        transform: translateX(-100%);
+    }
+    100% {
+        /* Termina fuera de la vista a la derecha */
+        transform: translateX(100%);
+    }
+}
