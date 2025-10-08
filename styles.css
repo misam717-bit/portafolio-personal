@@ -600,31 +600,58 @@ footer .redes {
         transform: translateX(100%);
     }
 }
-/* Estilo para el botón flotante de WhatsApp */
+/* Estilo General (Para todas las pantallas) */
 #btn-whatsapp-flotante {
-    position: fixed; /* Hace que el botón se quede fijo en la pantalla */
-    bottom: 20px; /* Distancia desde la parte inferior */
-    right: 20px; /* Distancia desde la derecha */
-    background-color: #25d366; /* Color de WhatsApp */
+    position: fixed;
+    bottom: 25px;
+    right: 25px; /* Por defecto, se queda a la derecha */
+    background-color: #25d366;
     color: white;
-    border-radius: 50%; /* Lo hace circular */
+    border-radius: 50%;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para que destaque */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease-in-out; /* Animación de hover */
+    transition: transform 0.3s ease-in-out;
+    /* Tamaño para escritorio */
+    width: 60px;
+    height: 60px;
 }
 
-/* Efecto al pasar el mouse */
+/* LÓGICA DEL BOTÓN DE WHATSAPP FLOTANTE */
+#btn-whatsapp-flotante {
+    position: fixed;
+    bottom: 20px;
+    /* CAMBIO CLAVE: Mover de 'right' a 'left' */
+    left: 20px; 
+    right: auto; /* Se asegura de que no use la derecha */
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    width: 50px;
+    height: 50px;
+}
+
 #btn-whatsapp-flotante:hover {
-    transform: scale(1.1); /* Lo hace un poco más grande al pasar el mouse */
+    transform: scale(1.1);
 }
 
-/* Ajuste del ícono dentro del botón */
-#btn-whatsapp-flotante svg {
-    stroke: white; /* Asegura que el ícono sea blanco */
+/* Opcional: Si tenías un media query para WhatsApp, elimínalo o verifica que siga usando 'left' */
+@media (max-width: 768px) {
+    /* Si existe este bloque, verifica que use 'left' */
+    #btn-whatsapp-flotante {
+        left: 15px; /* o el valor que desees para móvil */
+        right: auto;
+    }
 }
 /* ======================== */
 /* ==== FIN DE STYLES.CSS y para actualizar que algo cambio en el style ==== */
