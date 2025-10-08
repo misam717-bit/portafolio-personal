@@ -600,5 +600,31 @@ footer .redes {
         transform: translateX(100%);
     }
 }
+/* Estilo para el botón flotante de WhatsApp */
+#btn-whatsapp-flotante {
+    position: fixed; /* Hace que el botón se quede fijo en la pantalla */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #25d366; /* Color de WhatsApp */
+    color: white;
+    border-radius: 50%; /* Lo hace circular */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para que destaque */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out; /* Animación de hover */
+}
+
+/* Efecto al pasar el mouse */
+#btn-whatsapp-flotante:hover {
+    transform: scale(1.1); /* Lo hace un poco más grande al pasar el mouse */
+}
+
+/* Ajuste del ícono dentro del botón */
+#btn-whatsapp-flotante svg {
+    stroke: white; /* Asegura que el ícono sea blanco */
+}
 /* ======================== */
 /* ==== FIN DE STYLES.CSS y para actualizar que algo cambio en el style ==== */
