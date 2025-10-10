@@ -130,3 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
     toggleVisibility();
 });
+// =========================================================
+// LÓGICA PARA DETENER EL VIDEO AL CERRAR EL MODAL
+// =========================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Obtener el elemento del modal de Bootstrap y el elemento de video
+    const videoModal = document.getElementById('videoProyectoModal');
+    const videoElement = document.getElementById('miVideo');
+
+    // 2. Si ambos elementos existen, añadir el evento.
+    if (videoModal && videoElement) {
+        // 3. 'hide.bs.modal' es el evento de Bootstrap que se dispara cuando el modal se va a ocultar.
+        videoModal.addEventListener('hide.bs.modal', function () {
+            // Pausa el video.
+            videoElement.pause();
+            // Opcional: Reiniciar el video al principio.
+            videoElement.currentTime = 0;
+        });
+    }
+});
