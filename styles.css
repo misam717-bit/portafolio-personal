@@ -459,6 +459,11 @@ footer .redes {
 /* ==== ESTILOS MODAL Y CARRUSEL ==== */
 /* ======================== */
 
+/* related resource: _modal.scss:140:1 */
+.modal-title { /* the element was h5#videoProyectoModalLabel */
+  color: rgb(0, 0, 0);
+}
+
 /* Estilo para mejorar la legibilidad del texto en el carrusel (Bootstrap Modal) */
 .carousel-caption {
     /* Fondo oscuro semitransparente para mejorar el contraste con la imagen */
