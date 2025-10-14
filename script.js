@@ -4,7 +4,7 @@
 
 const loader = document.getElementById('loader-container');
 const mainContent = document.getElementById('main-content');
-const DURATION_MS = 3000; // Tiempo total que estará visible el loader (3.5 segundos)
+const DURATION_MS = 1; // Tiempo total que estará visible el loader (3.5 segundos) aqui tenia 3000
 
 // La función que oculta el loader y muestra el contenido.
 const hideAndShowContent = () => {
@@ -23,7 +23,7 @@ const hideAndShowContent = () => {
         // Usamos un retraso basado en la duración de la transición CSS (0.7s)
         setTimeout(() => {
              loader.style.display = 'none';
-        }, 700); 
+        }, 1); // aqui tenia 700
     }
 };
 

@@ -146,7 +146,7 @@ h2 {
 
 .proyecto img {
     width: 100%;
-    height: 270px;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -459,8 +459,7 @@ footer .redes {
 /* ==== ESTILOS MODAL Y CARRUSEL ==== */
 /* ======================== */
 
-/* related resource: _modal.scss:140:1 */
-.modal-title { /* the element was h5#videoProyectoModalLabel */
+.modal-title { 
   color: rgb(0, 0, 0);
 }
 
@@ -494,6 +493,69 @@ footer .redes {
     object-fit: contain; /* Asegura que la imagen completa sea visible */
     width: 100%;
 }
+/* ======================== */
+/* ==== ESTILOS MODAL Y CARRUSEL ==== */
+/* ======================== */
+
+.modal-title { 
+  color: rgb(0, 0, 0);
+}
+
+/* Estilo para mejorar la legibilidad del texto en el carrusel (Bootstrap Modal) */
+/* ... (El resto de tus estilos .carousel-caption, h5, img se mantienen aquí) ... */
+
+
+/* ---------------------------------------------------- */
+/* --- AJUSTE PARA VISIBILIDAD DE FLECHAS Y PUNTOS --- */
+/* ---------------------------------------------------- */
+
+/* 1. Cambiar el color de las flechas (iconos) a negro/gris oscuro */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    /* El filtro invert(1) convierte el SVG blanco en negro. Si el modal fuera oscuro, usarías filter: invert(0). 
+       Dado que el modal es blanco por defecto, esto hará que sean visibles. */
+    filter: invert(0.5); /* Esto produce un gris oscuro, que se ve bien en fondos claros */
+}
+
+/* 2. Cambiar el color de los indicadores (puntos inferiores) */
+.carousel-indicators button {
+    background-color: #333; /* Color gris oscuro para que se vean */
+    opacity: 0.8; /* Ligeramente transparente */
+}
+
+.carousel-indicators .active {
+    background-color: #000; /* Color negro para el punto activo */
+    opacity: 1;
+}
+
+/* ======================== */
+/* ==== ESTILOS MODAL Y CARRUSEL ==== */
+/* ======================== */
+
+.modal-title { 
+  color: rgb(0, 0, 0);
+}
+/* ... (Tus estilos existentes aquí) ... */
+
+/* ---------------------------------------------------- */
+/* --- AJUSTE DE COLOR DE FONDO DEL MODAL --- */
+/* ---------------------------------------------------- */
+
+.modal-content {
+    /* Fondo oscuro para que coincida con tu tema */
+    background-color: #1a1a1a; /* Usa el mismo color que tu header */
+    color: #e0e0e0; /* Asegura que el texto general del modal sea claro */
+}
+
+/* También debes asegurarte de que el título del modal sea visible */
+/* Ya lo tienes en negro, cámbialo a blanco para que se vea sobre el nuevo fondo oscuro */
+.modal-title { 
+  color: #ffffff; /* ¡Cambiar a blanco! */
+}
+
+/* ---------------------------------------------------- */
+/* --- FIN AJUSTE DE COLOR DE FONDO DEL MODAL --- */
+/* ---------------------------------------------------- */
 /* ======================== */
 /* ==== BOTÓN IR ARRIBA ==== */
 /* ======================== */
@@ -668,4 +730,62 @@ footer .redes {
     }
 }
 /* ======================== */
+.proyectos {
+  /* Habilita el módulo de Grid */
+  display: grid; 
+  
+  /* Define 2 columnas con igual ancho (fracción 1) */
+  grid-template-columns: 1fr 1fr; 
+  
+  /* Define el espacio (gap) entre las filas y columnas */
+  gap: 20px; /* Ajustá este valor según el espaciado deseado */
+  
+  /* Centra el contenedor en la página si es necesario */
+  /* justify-content: center; 
+  align-content: center; */
+}
+
+/* Opcional: Para una mejor adaptabilidad en pantallas pequeñas (diseño responsivo) */
+@media (max-width: 768px) {
+  .proyectos {
+    /* Cambia a una sola columna en pantallas más pequeñas */
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* ======================== */
+/* Selecciona la imagen dentro de la clase .proyecto */
+.proyecto img {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover; 
+  
+  /* Opcional: para esquinas redondeadas si lo deseas */
+  border-radius: 5px; 
+}
+/* ======================== */
+.icono-logo {
+    /* Muestra el elemento como si fuera una pieza de texto */
+    display: inline-block; 
+    
+    /* Ruta a tu archivo PNG de 16x16. 
+       ¡Ajusta la ruta si es necesario! */
+    background-image: url('assets/img/favicon.ico');
+    
+    /* Definir el tamaño exacto del PNG */
+    width: 26px; 
+    height: 26px;
+    
+    /* Asegura que el PNG se muestre sin repetirse y dentro del tamaño */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    
+    /* Ajuste vertical para que se alinee con el texto (opcional) */
+    vertical-align: middle; 
+}
+/* Estilo para la X (botón de cerrar) */
+.btn-close {
+    /* El filtro invert(1) convierte el SVG negro (o el color que sea por defecto) a blanco */
+    filter: invert(1);
+}
 /* ==== FIN DE STYLES.CSS y para actualizar que algo cambio en el style ==== */
