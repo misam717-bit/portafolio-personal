@@ -661,7 +661,7 @@ footer .redes {
     width: 150%; /* Más ancho para que el gradiente se mueva mejor */
     background: linear-gradient(90deg, transparent 0%, #00bfff 50%, transparent 100%);
     /* Duración ajustada a 3s */
-    animation: load-progress 3s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+    animation: load-progress 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
     transform-origin: 0% 50%;
 }
 
