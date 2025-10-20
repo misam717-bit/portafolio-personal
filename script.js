@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================================
   const loader = document.getElementById("loader-container");
   const mainContent = document.getElementById("main-content");
-  const DURATION_MS = 1; // Mantenemos el tiempo bajo para una carga rápida
+  const DURATION_MS = 2800; // Duración del loader en milisegundos
 
   const hideAndShowContent = () => {
     if (loader) {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (loader) {
       setTimeout(() => {
         loader.style.display = "none";
-      }, 1);
+      }, 700);
     }
   };
 
