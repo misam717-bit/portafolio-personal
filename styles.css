@@ -240,14 +240,12 @@ h2 {
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
-
 /* ======================== */
 /* ==== SOBRE MÍ & LISTAS ==== */
 /* ======================== */
 #sobre-mi {
   text-align: center;
 }
-
 #sobre-mi img {
   width: 160px;
   height: 160px;
@@ -257,7 +255,46 @@ h2 {
   border: 2px solid #00bfff;
   box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
 }
+/* animacion de foto */
+/* ================================================= */
+/* 1. Definición de la Animación de Respiración */
+/* ================================================= */
+@keyframes glow-pulse {
+    0% {
+        /* Borde y sombra al inicio (menos brillante) */
+        border-color: rgba(0, 191, 255, 0.4); /* Borde menos visible */
+        box-shadow: 0 0 5px rgba(0, 191, 255, 0.4);
+    }
+    50% {
+        /* Borde y sombra en el punto máximo de brillo (el "respiro") */
+        border-color: #00bfff; /* Borde totalmente visible */
+        box-shadow: 0 0 20px #00bfff, 0 0 30px rgba(0, 191, 255, 0.2);
+    }
+    100% {
+        /* Vuelve al inicio */
+        border-color: rgba(0, 191, 255, 0.4);
+        box-shadow: 0 0 5px rgba(0, 191, 255, 0.4);
+    }
+}
+/* ================================================= */
+/* 2. Aplicación de la Animación */
+/* ================================================= */
+#sobre-mi img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.2rem;
+    
+    /* VALORES INICIALES (Mismos que el 0% de la animación) */
+    border: 2px solid rgba(0, 191, 255, 0.4); 
+    box-shadow: 0 0 5px rgba(0, 191, 255, 0.4);
 
+    /* PROPIEDAD DE ANIMACIÓN */
+    /* Nombre | Duración | Timing Function | Repetición */
+    animation: glow-pulse 3s ease-in-out infinite; 
+}
+/*termino de animacion de foto */
 /* Nota: Los estilos genéricos para 'ul' y 'li' ya están definidos y aplicarán a estas secciones */
 /* Si necesitas estilos específicos, puedes usar #sobre-mi ul o #sobre-mi li */
 
