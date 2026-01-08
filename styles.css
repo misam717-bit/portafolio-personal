@@ -847,4 +847,70 @@ footer .redes {
   /* El filtro invert(1) convierte el SVG negro (o el color que sea por defecto) a blanco */
   filter: invert(1);
 }
-/* ==== FIN DE STYLES.CSS y para actualizar que algo cambio en el style ==== */
+/* ============================= */
+/* === LEER MÁS / LEER MENOS === */
+/* ============================= */
+
+#desc-ferreteria {
+  position: relative;
+  max-height: 140px !important;
+  overflow: hidden !important;
+  transition: max-height 0.5s ease;
+  text-align: left;
+  margin: 0 1rem;
+  padding-bottom: 5px;
+}
+
+/* Estado expandido */
+#desc-ferreteria.expandido {
+  max-height: 3000px !important;
+  overflow: visible !important;
+}
+
+/* Ocultar gradiente cuando está expandido */
+#desc-ferreteria.expandido::after {
+  display: none !important;
+}
+
+/* Gradiente solo cuando NO está expandido */
+#desc-ferreteria:not(.expandido)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(transparent, #1f1f1f);
+  pointer-events: none;
+}
+
+/* Estilos del botón */
+.btn-leer-mas {
+  background: none;
+  border: none;
+  color: #00bfff;
+  cursor: pointer;
+  padding: 8px 0;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-family: inherit;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.btn-leer-mas:hover {
+  color: #008cba;
+}
+.proyectos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+  gap: 20px; /* Espacio entre ellas */
+}
+
+/* Para que en móviles se vea una sola columna */
+@media (max-width: 768px) {
+  .proyectos {
+    grid-template-columns: 1fr;
+  }
+}

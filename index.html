@@ -87,11 +87,10 @@
     <section id="portafolio">
       <h2>Proyectos</h2>
       <div class="proyectos">
+
         <div class="proyecto">
-          <img src="assets/img/dash.jpg" alt="Imagen del proyecto Dashboard Dinamico" />
-
+          <img src="assets/img/dash.jpg" alt="Dashboard Dinamico" />
           <h3>Dashboard Dinamico</h3>
-
           <p>
             Desarrollé un sistema de análisis de ventas a partir de una base de
             datos de clientes, productos, países y métodos de pago (2019–2021).
@@ -100,62 +99,80 @@
             año, producto, país y método de pago, así como la automatización de
             envío de correos personalizados a clientes mediante VBA.
           </p>
-
           <div class="botones-proyecto">
             <a href="https://docs.google.com/spreadsheets/d/1IlOAQzq5zr4OJ8P3w6Z5BGS04JeUczGDs-8s8kzZClQ/edit?usp=sharing"
               target="_blank" class="btn-ver">Ver Proyecto</a>
-
-            <a href="assets/archivos/dashboard-dinamico.xlsx" download class="btn-descargar">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-                <path d="M7 11l5 5l5 -5"></path>
-                <path d="M12 4v12"></path>
-              </svg>
-              Descargar Proyecto
-            </a>
+            <a href="assets/archivos/dashboard-dinamico.xlsx" download class="btn-descargar">Descargar Proyecto</a>
           </div>
         </div>
 
-
         <div class="proyecto">
-          <img src="assets/img/catalogo-ferreteria.jpg" alt="Captura de pantalla de tu Nuevo Proyecto" />
+          <img src="assets/img/catalogo-ferreteria.jpg" alt="Sistema Ferretería" />
+          <h3>Sistema de Gestión Ferretería 🛠️</h3>
+          <div id="desc-ferreteria">
+            <p>Plataforma web profesional para la gestión de un stock de más de 3,500 productos. El sistema fue migrado
+              de
 
-          <h3>Sistema de Gestión y Digitalización para Ferretería 🛠️</h3>
+              una arquitectura en la nube a un modelo de servidor local de alta disponibilidad, optimizando costos y
 
-          <p>
-            Desarrollé esta plataforma web, que funciona como un catálogo
-            digital del stock de productos de una ferretería, para demostrar mis
-            capacidades en el desarrollo full-stack y DevOps. El proyecto
-            comenzó localmente con Python (Flask) y SQLite3, pero fue migrado a
-            PostgreSQL para garantizar la integridad y escalabilidad de los
-            datos en un entorno de producción, ya que SQLite3 no maneja bien la
-            concurrencia. La aplicación está desplegada en Render, lo que
-            permite un despliegue continuo automático desde GitHub (usado para
-            control de versiones). Además, utilicé Cloudinary para la gestión
-            eficiente y optimizada de todas las imágenes y recursos multimedia
-            del catálogo.
-          </p>
+              permitiendo el acceso de clientes mediante códigos QR en el punto de venta.
 
+              Puntos Clave y Soluciones Técnicas
+
+              Seguridad y Panel Administrativo (RBAC): Sistema de autenticación robusto para la gestión del inventario.
+              El
+
+              panel permite realizar operaciones CRUD, asegurando que solo el personal autorizado pueda modificar
+              precios,
+
+              existencias y activos del catálogo.
+
+              Automatización de Activos (Scraping & Sincronización): Motor de scraping inteligente con 4 niveles de
+
+              búsqueda para la obtención de imágenes. El sistema mantiene una integridad 1:1 entre el inventario CSV y
+              el
+
+              repositorio de archivos, automatizando la descarga y el mapeo de más de 3,000 productos.
+
+              Pipeline de Optimización y Almacenamiento Local: En lugar de depender de servicios externos costosos,
+
+              implementé un flujo de procesamiento incremental que ajusta contraste, color y tamaño de las imágenes
+
+              directamente en el servidor local. Esto garantiza una carga rápida de la página sin consumir ancho de
+              banda
+
+              de internet excesivo.
+
+              Infraestructura de Borde y Despliegue (DevOps): Configuré el servidor físico en el establecimiento para
+
+              operar de manera híbrida. Utilicé un túnel seguro mediante ngrok para exponer el catálogo a internet
+              durante
+
+              el horario laboral, permitiendo que los clientes consulten el stock en tiempo real escaneando códigos QR
+
+              distribuidos en el negocio. Esta solución eliminó los costos de hosting manteniendo la disponibilidad y
+
+              seguridad de los datos.
+
+              Orquestación y Mantenimiento: Script orquestador que sincroniza el CSV de la ferretería con la
+
+              base de datos y ejecuta una limpieza de imágenes huérfanas, asegurando que el servidor local siempre tenga
+
+              espacio optimizado y datos actualizados.</p>
+          </div>
+          <button type="button" class="btn-leer-mas" id="btn-leer-mas-ferreteria">Leer más...</button>
           <div class="botones-proyecto">
-            <a href="https://dimensional-zulema-unsuicidal.ngrok-free.dev/" target="_blank" class="btn-ver">Ver Proyecto
-            </a>
-
+            <a href="https://dimensional-zulema-unsuicidal.ngrok-free.dev/" target="_blank" class="btn-ver">Ver
+              Proyecto</a>
             <button type="button" class="btn-descargar" data-bs-toggle="modal"
-              data-bs-target="#modalCatalogoFerreteria">
-              📸 Ver Capturas
-            </button>
+              data-bs-target="#modalCatalogoFerreteria">📸 Ver Capturas</button>
           </div>
         </div>
 
         <div class="proyecto">
-          <img src="assets/img/n8n.jpg" alt="Captura de pantalla de tu Nuevo Proyecto" />
-
+          <img src="assets/img/n8n.jpg" alt="n8n Business Intelligence" />
           <h3>Análisis de Datos y Business Intelligence (n8n/JavaScript) ✨</h3>
-
-          <p>
-            Desarrollo y orquestación de un Pipeline de ETL automatizado construido en n8n (Node.js/npm) para
+          <p>Desarrollo y orquestación de un Pipeline de ETL automatizado construido en n8n (Node.js/npm) para
             transformar datos transaccionales de ventas en inteligencia de negocio estratégica.
 
             Funcionalidad Clave: El workflow utiliza JavaScript para aplicar un filtrado estricto y lógica avanzada que
@@ -164,25 +181,14 @@
             Business Intelligence a Google Drive, optimizando la toma de decisiones de inventario y estrategia
             comercial.
           </p>
-
           <a href="#" class="btn btn-ver" data-bs-toggle="modal" data-bs-target="#videoProyectoModal"
-            data-video-src="assets/video/N8NCLIP.mp4" data-descarga-src="assets/video/N8NCLIP.mp4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-              <path d="M10 8l6 4l-6 4z"></path>
-            </svg>
-            Reproducir Video
-          </a>
+            data-video-src="assets/video/N8NCLIP.mp4">Reproducir Video</a>
         </div>
 
         <div class="proyecto">
-          <img src="assets/img/dash power bi.jpg" alt="Miniatura del Proyecto de Video" />
+          <img src="assets/img/dash power bi.jpg" alt="Power BI" />
           <h3 class="titulo-video">Video Dashboard 🎥</h3>
-
-          <p>
-            Dashboard de Inteligencia de Negocios para Ferretería (Power BI)
+          <p>Dashboard de Inteligencia de Negocios para Ferretería (Power BI)
             Este proyecto consistió en la creación de un Dashboard Interactivo en Power BI a partir de una base de datos
             de ventas de una ferretería. El objetivo principal fue transformar datos brutos en información estratégica y
             accionable para la toma de decisiones de inventario y enfoque comercial.
@@ -194,63 +200,67 @@
             de ventas. Esta información fue crucial para optimizar la gestión de inventario, asegurando que los
             departamentos clave siempre cuenten con el stock adecuado o se priorice la adquisición de productos nuevos
             en
-            esas áreas de alto desempeño.
-          </p>
-
+            esas áreas de alto desempeño.</p>
           <a href="#" class="btn btn-ver" data-bs-toggle="modal" data-bs-target="#videoProyectoModal"
-            data-video-src="assets/video/obs.mp4" data-descarga-src="assets/video/obs.mp4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-              <path d="M10 8l6 4l-6 4z"></path>
-            </svg>
-            Reproducir Video
-          </a>
+            data-video-src="assets/video/obs.mp4">Reproducir Video</a>
         </div>
 
-      </div>
+        <div class="proyecto">
+          <img src="assets/img/StockAlertaPro.jpg" alt="Stock Alerta Pro" />
+          <h3>App Android Stock Alerta Pro</h3>
+          <p>
+            Transforma tu hoja de cálculo de ventas en un sistema de alerta de inventario. Stock Alerta Pro integra tu
+            archivo CSV (convertido desde XLSX) para generar automáticamente alertas de stock clasificadas en:
 
-      <div class="proyecto">
-        <img src="assets/img/StockAlertaPro.jpg" alt="Captura de pantalla de tu Nuevo Proyecto" />
+            <br>🔴 Urgente: Productos agotados (stock en 0).<br>
 
-        <h3>App Android Stock Alerta Pro <span class="icono-logo"></span></h3>
+            🟠 Crítica: Menos de 10 unidades.<br>
 
-        <p>
-          Transforma tu hoja de cálculo de ventas en un sistema de alerta de inventario. Stock Alerta Pro integra tu
-          archivo CSV (convertido desde XLSX) para generar automáticamente alertas de stock clasificadas en:
+            🟡 Baja: Menos de 20 unidades.<br>
 
-          <br>🔴 Urgente: Productos agotados (stock en 0).<br>
+            La aplicación proporciona información clave para facilitar las decisiones de resurtido. Además, optimiza la
+            comunicación y la gestión de urgencias al permitir el envío directo por WhatsApp de los productos urgentes y
+            la generación de un PDF detallado de los mismos.<br>
 
-          🟠 Crítica: Menos de 10 unidades.<br>
-
-          🟡 Baja: Menos de 20 unidades.<br>
-
-          La aplicación proporciona información clave para facilitar las decisiones de resurtido. Además, optimiza la
-          comunicación y la gestión de urgencias al permitir el envío directo por WhatsApp de los productos urgentes y
-          la generación de un PDF detallado de los mismos.<br>
-
-          🛠️ Desarrollada con: Android Studio, utilizando Kotlin y la interfaz moderna de Jetpack Compose para una
-          experiencia de usuario fluida y eficiente.
-        </p>
-
-        <div class="botones-proyecto">
-          <a href="assets/archivos/Recursos.zip" download class="btn-descargar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-              <path d="M7 11l5 5l5 -5"></path>
-              <path d="M12 4v12"></path>
-            </svg>
-            Descargar Recursos
-          </a>
-
-          <button type="button" class="btn-descargar" data-bs-toggle="modal" data-bs-target="#modalStockAlerta">
-            📸 Ver Capturas
-          </button>
+            🛠️ Desarrollada con: Android Studio, utilizando Kotlin y la interfaz moderna de Jetpack Compose para una
+            experiencia de usuario fluida y eficiente.
+          </p>
+          <div class="botones-proyecto">
+            <a href="assets/archivos/Recursos.zip" download class="btn-descargar">Descargar Recursos</a>
+            <button type="button" class="btn-descargar" data-bs-toggle="modal" data-bs-target="#modalStockAlerta">📸 Ver
+              Capturas</button>
+          </div>
         </div>
-      </div>
+
+        <div class="proyecto">
+          <img src="assets/img/Ordenes de T.jpg" alt="Nuevo Proyecto" />
+          <h3>App Gestor de Órdenes de Servicio Multi-Sectores ⚙️</h3>
+          <p>
+            Aplicación integral diseñada para gestionar el ciclo de vida completo de una reparación.
+            <br>
+            Lógica de Negocio Adaptativa: El sistema implementa lógica condicional que transforma dinámicamente los
+            formularios según el sector, ajustando campos específicos como
+            kilometraje, placas o números de serie según sea el caso.
+
+            Módulo de Evidencia Fotográfica: Incluye un sistema  que permite
+            capturar fotos con descripciones. Estas sirven como respaldo en el reporte final para evitar
+            reclamos por daños previos.
+
+            Documentación Dinámica y PDF: Genera documentos inteligentes en formato PDF que cambian su naturaleza según
+            el estatus: actúan como Cotización cuando el servicio está pendiente o en proceso, y se transforman en una
+            Nota de Remisión formal una vez liquidado el trabajo.
+
+            Gestión de Pagos y Garantías: Permite registrar pagos complejos (efectivo, tarjeta o combinados) y
+            establecer periodos de garantía mediante una interfaz de calendario intuitiva.
+
+          </p>
+          <div class="botones-proyecto">
+            <a href="assets/archivos/Recursos ot.zip" download class="btn-descargar">Descargar Recursos</a>
+            <button type="button" class="btn-descargar" data-bs-toggle="modal" data-bs-target="#modalOrdenesTrabajo">📸 Ver
+              Capturas</button>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -1192,6 +1202,121 @@
         </div>
       </div>
     </div>
+    <!-- fin carrousel-->
+     <!-- tercer carrousel-->
+    <div class="modal fade" id="modalOrdenesTrabajo" tabindex="-1" aria-labelledby="modalOrdenesTrabajoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalOrdenesTrabajoLabel">Capturas de Órdenes de Trabajo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="carruselOrdenesTrabajo" class="carousel slide" data-bs-ride="carousel">
+          
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide-to="8" aria-label="Slide 9"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/img/inicio app.jpg" class="d-block w-100" alt="Inicio de App" />
+              <div class="carousel-caption">
+                <h5>Inicio de App</h5>
+                <p>Interfaz principal de la app.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/creacion de taller.jpg" class="d-block w-100" alt="Creacion de taller" />
+              <div class="carousel-caption">
+                <h5>Creacion de taller</h5>
+                <p>Aqui se configura el taller agregando sus datos y logo.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/creacion de cliente.jpg" class="d-block w-100" alt="Creacion de cliente" />
+              <div class="carousel-caption">
+                <h5>Creacion de cliente</h5>
+                <p>Formulario de registro de clientes.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/creacion de orden.jpg" class="d-block w-100" alt="Creacion de orden" />
+              <div class="carousel-caption">
+                <h5>Creacion de orden</h5>
+                <p>Adaptación automática de campos para línea blanca y audio, priorizando números de serie y modelos técnicos.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/garantia.jpg" class="d-block w-100" alt="Garantia" />
+              <div class="carousel-caption">
+                <h5>Garantia</h5>
+                <p>Integración con calendario para definir periodos de garantía personalizados según el trabajo realizado.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/orden ejemplo.jpg" class="d-block w-100" alt="Orden ejemplo" />
+              <div class="carousel-caption">
+                <h5>Control de Garantías</h5>
+                <p>Integración con calendario para definir periodos de garantía personalizados según el trabajo realizado.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/orden ejemplo 2.jpg" class="d-block w-100" alt="Orden ejemplo 2" />
+              <div class="carousel-caption">
+                <h5>Orden ejemplo</h5>
+                <p>Se muestra cómo se ve una orden con sus datos llenos.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/cotizacion muestra.jpg" class="d-block w-100" alt="Cotizacion muestra" />
+              <div class="carousel-caption">
+                <h5>Cotizacion muestra</h5>
+                <p>Se muestra cómo se ve una cotización con datos del taller, del cliente y fotografias de evidencia.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/orden tereminada muestra.jpg" class="d-block w-100" alt="Orden terminada muestra" />
+              <div class="carousel-caption">
+                <h5>Orden terminada muestra</h5>
+                <p>Se muestra como se ve el pdf generado como una orden completada.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carruselOrdenesTrabajo" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- fin carrousel-->
     <a href="https://api.whatsapp.com/send?phone=525647418934&text=Hola%20Misael,%20soy%20[Nombre]%20de%20[Empresa].%20Vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20explorar%20tu%20candidatura%20para%20[Puesto%20o%20%C3%81rea].%20%C2%BFPodemos%20agendar%20una%20llamada%3F"
       target="_blank" id="btn-whatsapp-flotante" title="¡Contáctame por WhatsApp!">

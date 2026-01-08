@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================================
   const loader = document.getElementById("loader-container");
   const mainContent = document.getElementById("main-content");
-  const DURATION_MS = 2800; // Duración del loader en milisegundos
+  const DURATION_MS = 2800;
 
   const hideAndShowContent = () => {
     if (loader) {
@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Ejecutar el cargador
   setTimeout(hideAndShowContent, DURATION_MS);
 
   // =========================================================
@@ -53,48 +52,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================================================
-  // LÓGICA DE VIDEO Y CARGA DINÁMICA DEL MODAL (Corregida)
+  // LÓGICA DE VIDEO Y CARGA DINÁMICA DEL MODAL
   // =========================================================
   const videoModal = document.getElementById("videoProyectoModal");
   const videoElement = document.getElementById("miVideo");
-  // Asegúrate de que el enlace de descarga tenga este ID en tu HTML
   const downloadLink = document.getElementById("enlaceDescargaVideo");
 
   if (videoModal && videoElement && downloadLink) {
-    // 1. EVENTO PARA CARGAR EL VIDEO Y DESCARGA AL ABRIR EL MODAL
     videoModal.addEventListener("show.bs.modal", function (event) {
       const button = event.relatedTarget;
-
-      // ATRIBUTOS PARA EL VIDEO
       const videoSrc = button.getAttribute("data-video-src");
       const posterSrc = button.getAttribute("data-video-poster");
       const sourceElement = videoElement.querySelector("source");
-
-      // ATRIBUTOS PARA LA DESCARGA
       const descargaSrc = button.getAttribute("data-descarga-src");
       const descargaTexto = button.getAttribute("data-descarga-texto");
 
-      // CARGAR VIDEO (Esto resuelve que siempre se muestre el mismo video)
       if (videoSrc) {
-        // **PASO CLAVE:** Limpiar la fuente para forzar al navegador a recargar el nuevo SRC
         sourceElement.src = "";
         videoElement.poster = posterSrc;
         sourceElement.src = videoSrc;
         sourceElement.type = "video/mp4";
-
         videoElement.load();
-
-        // 💡 SOLUCIÓN 1: INICIAR LA REPRODUCCIÓN AUTOMÁTICAMENTE
-        // Utilizamos catch para evitar un error si el navegador bloquea el autoplay (política de Chrome/Safari)
         videoElement.play().catch((error) => {
-          console.log(
-            "Autoplay bloqueado (requiere interacción del usuario o video sin audio):",
-            error
-          );
+          console.log("Autoplay bloqueado:", error);
         });
       }
 
-      // ACTUALIZAR BOTÓN DESCARGA
       if (descargaSrc) {
         downloadLink.href = descargaSrc;
         downloadLink.setAttribute(
@@ -107,12 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // 2. EVENTO PARA DETENER EL VIDEO AL CERRAR EL MODAL (Resuelve el video que sigue sonando)
     videoModal.addEventListener("hide.bs.modal", function () {
       videoElement.pause();
       videoElement.currentTime = 0;
-
-      // **PASO CLAVE:** Limpiar la fuente para liberar recursos
       const sourceElement = videoElement.querySelector("source");
       sourceElement.src = "";
       videoElement.load();
@@ -120,9 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===================================
-  // Lógica para Re-inicializar el Carrusel de Bootstrap
+  // Lógica para Re-inicializar el Carrusel
   // ===================================
-  const carruselModal = document.getElementById("modalCatalogoFerreteria"); // Asumo que este es tu modal del carrusel
+  const carruselModal = document.getElementById("modalCatalogoFerreteria");
 
   if (carruselModal) {
     carruselModal.addEventListener("shown.bs.modal", () => {
@@ -137,4 +117,37 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-}); // FIN DEL ÚNICO document.addEventListener('DOMContentLoaded', ...)
+
+  // =========================================================
+  // LEER MÁS / LEER MENOS - SOLUCIÓN COMPLETA
+  // =========================================================
+  const btnLeerMas = document.getElementById("btn-leer-mas-ferreteria");
+  const contenedorDesc = document.getElementById("desc-ferreteria");
+
+  if (btnLeerMas && contenedorDesc) {
+    let expandido = false;
+
+    btnLeerMas.addEventListener("click", () => {
+      expandido = !expandido;
+
+      if (expandido) {
+        // EXPANDIR
+        contenedorDesc.style.maxHeight = "3000px";
+        contenedorDesc.style.overflow = "visible";
+        contenedorDesc.classList.add("expandido"); // ← AGREGAR CLASE
+        btnLeerMas.textContent = "Leer menos";
+      } else {
+        // CONTRAER
+        contenedorDesc.style.maxHeight = "140px";
+        contenedorDesc.style.overflow = "hidden";
+        contenedorDesc.classList.remove("expandido"); // ← QUITAR CLASE
+        btnLeerMas.textContent = "Leer más...";
+
+        contenedorDesc.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      }
+    });
+  }
+});
